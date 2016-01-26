@@ -24,7 +24,7 @@ it('rebuild the simplehttp2server binaries', function (cb) {
   new BinBuild()
     .src('https://github.com/GoogleChrome/simplehttp2server/archive/2.0.1.tar.gz')
     .cmd('mkdir -p ' + tmp)
-    .cmd('go build && mv ./simplehttp2server ' + path.join(tmp, 'simplehttp2server'))
+    .cmd('sh crosscompile.sh && mv ./simplehttp2server ' + path.join(tmp, 'simplehttp2server'))
     .run(function (err) {
       assert(!err);
       assert(fs.statSync(path.join(tmp, 'simplehttp2server')).isFile());
