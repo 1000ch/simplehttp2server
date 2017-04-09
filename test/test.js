@@ -1,41 +1,33 @@
-/* eslint-env mocha */
 'use strict';
 
-var assert = require('assert');
-var fs = require('fs');
-var path = require('path');
-var binCheck = require('bin-check');
-var BinBuild = require('bin-build');
-var mkdirp = require('mkdirp');
-var rimraf = require('rimraf');
-var tmp = path.join(__dirname, 'tmp');
+const fs = require('fs');
+const path = require('path');
+const test = require('ava');
+const tempy = require('tempy');
+const binCheck = require('bin-check');
+const BinBuild = require('bin-build');
+const suffix = require('../lib/suffix');
+const simplehttp2server = require('..');
 
-beforeEach(function (cb) {
-  mkdirp(tmp, cb);
-});
+test.cb('rebuild the simplehttp2server binaries', t => {
+  const tmp = tempy.directory();
+  const builder = new BinBuild();
 
-afterEach(function (cb) {
-  rimraf(tmp, {disableGlob: true}, cb);
-});
-
-it('rebuild the simplehttp2server binaries', function (cb) {
-  this.timeout(50000);
-
-  new BinBuild()
+  builder
     .src('https://github.com/GoogleChrome/simplehttp2server/archive/2.0.1.tar.gz')
-    .cmd('mkdir -p ' + tmp)
-    .cmd('sh crosscompile.sh && mv ./simplehttp2server ' + path.join(tmp, 'simplehttp2server'))
-    .run(function (err) {
-      assert(!err);
-      assert(fs.statSync(path.join(tmp, 'simplehttp2server')).isFile());
-      cb();
+    .cmd(`mkdir -p ${tmp}`)
+    .cmd(`sh crosscompile.sh && mv ./${path.basename(builder.tmp)}${suffix()} ${path.join(tmp, 'simplehttp2server')}`)
+    .run(err => {
+      t.ifError(err);
+      t.true(fs.existsSync(path.join(tmp, 'simplehttp2server')));
+      t.end();
     });
 });
 
-it('return path to binary and verify that it is working', function (cb) {
-  binCheck(require('../'), ['--help'], function (err, works) {
-    assert(!err);
-    assert(works);
-    cb();
-  });
+test('return path to binary and verify that it is working', async t => {
+  try {
+    await binCheck(simplehttp2server, ['--help']);
+  } catch (err) {
+    t.pass(err);
+  }
 });

@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 
-var spawn = require('child_process').spawn;
-var simplehttp2server = require('./');
-var input = process.argv.slice(2);
+const spawn = require('child_process').spawn;
+const simplehttp2server = require('.');
+
+const input = process.argv.slice(2);
 
 spawn(simplehttp2server, input, {
   stdio: 'inherit'

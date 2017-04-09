@@ -12,11 +12,11 @@ $ npm install --save simplehttp2server
 ## Usage
 
 ```js
-var execFile = require('child_process').execFile;
-var simplehttp2server = require('simplehttp2server');
+const execFile = require('child_process').execFile;
+const simplehttp2server = require('simplehttp2server');
 
-execFile(simplehttp2server, function (err) {
-	console.log('Simple http2 server is starting!');
+execFile(simplehttp2server, err => {
+  console.log('Simple http2 server is starting!');
 });
 ```
 
