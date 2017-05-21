@@ -15,7 +15,6 @@ test.cb('rebuild the simplehttp2server binaries', t => {
 
   builder
     .src('https://github.com/GoogleChrome/simplehttp2server/archive/2.0.1.tar.gz')
-    .cmd(`mkdir -p ${tmp}`)
     .cmd(`sh crosscompile.sh && mv ./${path.basename(builder.tmp)}${suffix()} ${path.join(tmp, 'simplehttp2server')}`)
     .run(err => {
       t.ifError(err);
