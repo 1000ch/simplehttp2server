@@ -1,5 +1,10 @@
 sudo: false
 language: node_js
+os:
+  - linux
+  - osx
+osx_image: xcode8.2
 node_js:
+  - '8'
   - '6'
   - '4'
