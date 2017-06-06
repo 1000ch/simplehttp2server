@@ -9,5 +9,7 @@ test('return path to binary and verify that it is working', async t => {
     await binCheck(simplehttp2server, ['--help']);
   } catch (err) {
     t.pass(err);
+    return;
   }
+  t.pass();
 });
