@@ -9,10 +9,10 @@ test('return path to binary and verify that it is working', t => {
   try {
     res += execa.sync(simplehttp2server, ['--help']);
   } catch (error) {
-    // it will fail, as the exit status code of the executable is 2
+    // It will fail, as the exit status code of the executable is 2
     res += error;
   }
-  // so: we check the output
+  // So: we check the output
   if (
     /Usage of/m.test(res) &&
     /-config string/m.test(res) &&
