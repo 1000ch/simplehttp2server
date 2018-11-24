@@ -1,6 +1,8 @@
 # simplehttp2server [![Build Status](https://travis-ci.org/1000ch/simplehttp2server.svg?branch=master)](https://travis-ci.org/1000ch/simplehttp2server)
 
 > simplehttp2server serves the current directory on an HTTP/2.0 capable server. This server is for development purposes only.
+>
+> Wrapper for: https://github.com/GoogleChromeLabs/simplehttp2server
 
 ## Install
 
