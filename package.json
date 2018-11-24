@@ -10,7 +10,7 @@
     "url": "http://github.com/1000ch"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "bin": {
     "simplehttp2server": "cli.js"
@@ -34,15 +34,14 @@
   },
   "homepage": "https://github.com/1000ch/simplehttp2server#readme",
   "dependencies": {
-    "bin-build": "^2.2.0",
-    "bin-wrapper": "^3.0.2",
+    "bin-wrapper": "^4.1.0",
     "logalot": "^2.1.0"
   },
   "devDependencies": {
-    "ava": "*",
+    "ava": "^0.25.0",
     "bin-check": "^4.0.1",
-    "tempy": "^0.1.0",
-    "xo": "*"
+    "tempy": "^0.2.1",
+    "xo": "^0.23.0"
   },
   "xo": {
     "space": 2
