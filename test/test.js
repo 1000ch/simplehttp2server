@@ -1,13 +1,26 @@
 'use strict';
+
 const test = require('ava');
-const binCheck = require('bin-check');
+const execa = require('execa');
 const simplehttp2server = require('..');
 
-test('return path to binary and verify that it is working', async t => {
+test('return path to binary and verify that it is working', t => {
+  let res = '';
   try {
-    await binCheck(simplehttp2server, ['--help']);
-    t.pass();
+    res += execa.sync(simplehttp2server, ['--help']);
   } catch (error) {
-    t.fail(error);
+    // it will fail, as the exit status code of the executable is 2
+    res += error;
+  }
+  // so: we check the output
+  if (
+    /Usage of/m.test(res) &&
+    /-config string/m.test(res) &&
+    /-cors string/m.test(res) &&
+    /-listen string/m.test(res)
+  ) {
+    t.pass();
+  } else {
+    t.fail(res);
   }
 });
