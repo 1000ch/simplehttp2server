@@ -12,7 +12,7 @@ $ npm install --save simplehttp2server
 ## Usage
 
 ```js
-const execFile = require('child_process').execFile;
+const {execFile} = require('child_process');
 const simplehttp2server = require('simplehttp2server');
 
 execFile(simplehttp2server, err => {
@@ -34,4 +34,4 @@ $ simplehttp2server --help
 
 ## License
 
-Apache 2
+MIT
