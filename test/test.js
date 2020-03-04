@@ -11,7 +11,7 @@ test('return path to binary and verify that it is working', async t => {
     // It will fail, as the exit status code of the executable is 2
     res += error;
   }
-  // So: we check the output
+
   if (
     /Usage of/m.test(res) &&
     /-config string/m.test(res) &&
