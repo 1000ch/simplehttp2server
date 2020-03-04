@@ -10,7 +10,7 @@
     "url": "https://github.com/1000ch"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=10"
   },
   "bin": {
     "simplehttp2server": "cli.js"
@@ -38,10 +38,10 @@
     "logalot": "^2.1.0"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "execa": "^1.0.0",
-    "tempy": "^0.2.1",
-    "xo": "^0.23.0"
+    "ava": "^3.5.0",
+    "execa": "^4.0.0",
+    "tempy": "^0.4.0",
+    "xo": "^0.27.2"
   },
   "xo": {
     "space": 2
