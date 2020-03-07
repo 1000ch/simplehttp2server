@@ -5,6 +5,5 @@ os:
   - osx
 osx_image: xcode8.2
 node_js:
+  - '12'
   - '10'
-  - '8'
-  - '6'
