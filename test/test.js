@@ -4,22 +4,22 @@ const execa = require('execa');
 const simplehttp2server = require('..');
 
 test('return path to binary and verify that it is working', async t => {
-  let res = '';
+  let output = '';
   try {
-    res += await execa(simplehttp2server, ['--help']);
+    output += await execa(simplehttp2server, ['--help']);
   } catch (error) {
     // It will fail, as the exit status code of the executable is 2
-    res += error;
+    output += error;
   }
 
   if (
-    /Usage of/m.test(res) &&
-    /-config string/m.test(res) &&
-    /-cors string/m.test(res) &&
-    /-listen string/m.test(res)
+    /Usage of/m.test(output) &&
+    /-config string/m.test(output) &&
+    /-cors string/m.test(output) &&
+    /-listen string/m.test(output)
   ) {
     t.pass();
   } else {
-    t.fail(res);
+    t.fail(output);
   }
 });
