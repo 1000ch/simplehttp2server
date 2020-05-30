@@ -1,6 +1,6 @@
 {
   "name": "simplehttp2server",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "simplehttp2server wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
   "repository": "1000ch/simplehttp2server",
