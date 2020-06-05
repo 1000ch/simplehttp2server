@@ -17,7 +17,6 @@
     "test": "xo && ava"
   },
   "files": [
-    "cli.js",
     "index.js",
     "lib"
   ],
