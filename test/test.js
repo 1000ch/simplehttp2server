@@ -1,7 +1,6 @@
-'use strict';
-const test = require('ava');
-const execa = require('execa');
-const simplehttp2server = require('..');
+import test from 'ava';
+import execa from 'execa';
+import simplehttp2server from '../index.js';
 
 test('return path to binary and verify that it is working', async t => {
   let output = '';
@@ -13,13 +12,13 @@ test('return path to binary and verify that it is working', async t => {
   }
 
   if (
-    /Usage of/m.test(output) &&
-    /-config string/m.test(output) &&
-    /-cors string/m.test(output) &&
-    /-listen string/m.test(output)
+    /Usage of/m.test(output)
+    && /-config string/m.test(output)
+    && /-cors string/m.test(output)
+    && /-listen string/m.test(output)
   ) {
     t.pass();
   } else {
-    t.fail(output);
+    t.fail(`output: ${output}`);
   }
 });

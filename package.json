@@ -10,8 +10,9 @@
     "url": "https://github.com/1000ch"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12.20"
   },
+  "type": "module",
   "scripts": {
     "postinstall": "node lib/install.js",
     "test": "xo && ava"
@@ -34,10 +35,10 @@
     "logalot": "^2.1.0"
   },
   "devDependencies": {
-    "ava": "^3.14.0",
-    "execa": "^5.0.0",
-    "tempy": "^1.0.0",
-    "xo": "^0.37.1"
+    "ava": "^3.15.0",
+    "execa": "^5.1.1",
+    "tempy": "^2.0.0",
+    "xo": "^0.44.0"
   },
   "xo": {
     "space": 2
