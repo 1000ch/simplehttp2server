@@ -13,8 +13,8 @@ $ npm install --save simplehttp2server
 ## Usage
 
 ```js
-const {execFile} = require('child_process');
-const simplehttp2server = require('simplehttp2server');
+import {execFile} from 'child_process';
+import simplehttp2server from 'simplehttp2server';
 
 execFile(simplehttp2server, err => {
   console.log('simplehttp2server is starting!');
