@@ -1,4 +1,4 @@
-# simplehttp2server ![GitHub Actions Status](https://github.com/1000ch/simplehttp2server/workflows/test/badge.svg?branch=master)
+# simplehttp2server ![GitHub Actions Status](https://github.com/1000ch/simplehttp2server/workflows/test/badge.svg)
 
 > [simplehttp2server](https://github.com/GoogleChromeLabs/simplehttp2server) serves the current directory on an HTTP/2.0 capable server. This server is for development purposes only.
 
