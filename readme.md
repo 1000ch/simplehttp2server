@@ -1,4 +1,4 @@
-# simplehttp2server ![GitHub Actions Status](https://github.com/1000ch/simplehttp2server/workflows/test/badge.svg)
+# simplehttp2server ![GitHub Actions Status](https://github.com/1000ch/simplehttp2server/workflows/test/badge.svg?branch=main)
 
 > [simplehttp2server](https://github.com/GoogleChromeLabs/simplehttp2server) serves the current directory on an HTTP/2.0 capable server. This server is for development purposes only.
 
@@ -16,7 +16,7 @@ $ npm install --save simplehttp2server
 import {execFile} from 'node:child_process';
 import simplehttp2server from 'simplehttp2server';
 
-execFile(simplehttp2server, err => {
+execFile(simplehttp2server, error => {
   console.log('simplehttp2server is starting!');
 });
 ```
