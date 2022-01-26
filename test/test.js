@@ -1,5 +1,5 @@
 import test from 'ava';
-import execa from 'execa';
+import {execa} from 'execa';
 import simplehttp2server from '../index.js';
 
 test('return path to binary and verify that it is working', async t => {
